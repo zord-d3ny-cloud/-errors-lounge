@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ERRORS LOUNGE — Community</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap');
 :root{
  --site-primary:#8b5cf6;--site-secondary:#ec4899;--site-background:#070611;
  --site-on-primary:#ffffff;--site-on-secondary:#ffffff;--site-on-background:#f7f5ff;
- --site-font-body:"Trebuchet MS",ui-sans-serif,system-ui,sans-serif;
- --site-font-heading:"Arial Black","Trebuchet MS",ui-sans-serif,sans-serif;
+ --site-font-body:"Manrope",ui-sans-serif,system-ui,sans-serif;
+ --site-font-heading:"Barlow Condensed",ui-sans-serif,system-ui,sans-serif;
  --site-heading-scale:1;--site-spacing-scale:1;--site-radius-scale:1;--site-decoration-opacity:1;
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070611;color:var(--site-on-background);font-family:var(--site-font-body);overflow-x:hidden}
@@ -27,65 +27,109 @@ main{max-width:1250px;margin:auto}.hero{min-height:100vh;display:grid;place-item
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:45px auto 0}.stat{padding:24px;text-align:left}.stat .label{color:#858091;font-size:.75rem;text-transform:uppercase;letter-spacing:.14em}.stat .value{font-size:2.6rem;font-weight:950;margin-top:7px}.live{display:inline-flex;gap:8px;align-items:center;color:#c4b5fd;font-size:.76rem}.live i{width:7px;height:7px;border-radius:50%;background:#a78bfa;box-shadow:0 0 12px #a78bfa;animation:pulse 1.5s infinite}
 .about{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.about-card{padding:34px}.about-card h3{font-size:1.8rem;margin:0 0 15px}.about-card p{color:#aaa4b6;line-height:1.8}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.chip{padding:9px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;color:#cfc9da;font-size:.82rem}
 .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.game{padding:24px;position:relative;overflow:hidden}.game:after{content:"";position:absolute;inset:auto -40px -70px auto;width:150px;height:150px;background:#8b5cf6;filter:blur(70px);opacity:.18}.game-icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(139,92,246,.3),rgba(236,72,153,.18));border:1px solid rgba(167,139,250,.2);font-weight:900;color:#ddd6fe}.game h3{margin:22px 0 8px}.game p{color:#908a9b;line-height:1.6;font-size:.9rem;min-height:72px}.game .btn{margin-top:8px;width:100%;justify-content:center}
-.events{display:grid;gap:14px}.event{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:22px;padding:22px}.event-date{font-weight:900;font-size:1.1rem}.event-date small{display:block;color:#858091;font-size:.72rem;letter-spacing:.12em;margin-bottom:5px}.event h3{margin:0 0 6px}.event p{margin:0;color:#908a9b}.badge{display:inline-block;padding:6px 9px;border-radius:999px;font-size:.67rem;letter-spacing:.1em;font-weight:900;background:rgba(139,92,246,.12);color:#c4b5fd;border:1px solid rgba(139,92,246,.18)}
+.events{display:grid;gap:18px}.event{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:22px;padding:22px;position:relative}.event-date{font-weight:900;font-size:1.1rem}.event-date small{display:block;color:#858091;font-size:.72rem;letter-spacing:.12em;margin-bottom:5px}.event h3{margin:0 0 6px}.event p{margin:0;color:#908a9b}.badge{display:inline-block;padding:6px 9px;border-radius:999px;font-size:.67rem;letter-spacing:.1em;font-weight:900;background:rgba(139,92,246,.12);color:#c4b5fd;border:1px solid rgba(139,92,246,.18)}
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.member{padding:22px;text-align:center;transition:.3s}.member.owner{grid-column:span 4;display:grid;grid-template-columns:auto 1fr auto;align-items:center;text-align:left;gap:20px;padding:28px}.avatar{width:78px;height:78px;border-radius:22px;background:linear-gradient(135deg,#8b5cf6,#ec4899);display:grid;place-items:center;font-weight:1000;font-size:1.2rem;margin:0 auto;color:white;box-shadow:0 15px 45px rgba(139,92,246,.2)}.owner .avatar{margin:0}.member h3{margin:14px 0 5px}.member .role{color:#a78bfa;font-size:.76rem;text-transform:uppercase;letter-spacing:.13em}.member p{color:#777182;font-size:.75rem}.profile{display:inline-flex;align-items:center;gap:7px;margin-top:12px;color:#c4b5fd;font-size:.8rem}
 .rules{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.rule{padding:24px}.rule-num{font-size:.7rem;color:#a78bfa;letter-spacing:.15em;font-weight:900}.rule h3{margin:10px 0 8px}.rule p{color:#918b9d;line-height:1.65;margin:0}.rule-intro{padding:32px;margin-bottom:16px;color:#aaa4b6;line-height:1.8}
-.achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.achievement{padding:24px}.achievement .year{color:#a78bfa;font-size:.72rem;letter-spacing:.15em}.achievement h3{margin:12px 0 8px}.achievement p{color:#908a9b;line-height:1.6}
+.achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.achievement{padding:24px;overflow:hidden;position:relative}.achievement img{width:100%;height:180px;object-fit:cover;display:block;margin:-24px -24px 22px;width:calc(100% + 48px);image-rendering:auto}.achievement .year{color:#a78bfa;font-size:.72rem;letter-spacing:.15em}.achievement h3{margin:12px 0 8px}.achievement p{color:#908a9b;line-height:1.6}
 footer{padding:70px 20px 35px;border-top:1px solid rgba(255,255,255,.07);margin-top:40px}.footer-inner{max-width:1250px;margin:auto;display:flex;justify-content:space-between;gap:30px;align-items:start}.footer-brand{max-width:380px}.footer-brand h3{letter-spacing:.12em}.footer-brand p{color:#7f7989;line-height:1.7}.footer-links{display:flex;gap:20px;flex-wrap:wrap;color:#9a94a5;font-size:.86rem}.copy{max-width:1250px;margin:40px auto 0;color:#5f5a68;font-size:.75rem}
 .cursor{position:fixed;width:18px;height:18px;border:1px solid #c4b5fd;border-radius:50%;pointer-events:none;z-index:1000;mix-blend-mode:screen;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
 /* chill glitch skin */
-/* minecraft-style block skin */
-:root{--site-font-body:"Press Start 2P","Courier New",monospace;--site-font-heading:"Press Start 2P","Courier New",monospace}
-body{font-family:var(--site-font-body);image-rendering:pixelated}
-.hero h1,.section-head h2,h1,h2,h3,.brand{font-family:var(--site-font-heading);font-weight:400;letter-spacing:.01em;text-shadow:4px 4px 0 #24133d,7px 7px 0 rgba(0,0,0,.45)}
-.btn{border-radius:0!important;border:3px solid #b9a6d9!important;background:#14121d!important;box-shadow:6px 6px 0 #3b275f!important;font-family:var(--site-font-body);font-weight:400;letter-spacing:0;font-size:.68rem}
-.btn:hover{transform:translate(-2px,-2px)!important;border-color:#c4b5fd!important;box-shadow:7px 7px 0 #4c1d95!important}
-.btn.primary{background:#8b5cf6!important;border-color:#eee6ff!important;box-shadow:6px 6px 0 #4c1d95!important}
-.glass{border-radius:0!important;background:#100e18!important;border:3px solid rgba(167,139,250,.28)!important;box-shadow:8px 8px 0 rgba(76,29,149,.38)!important;backdrop-filter:none!important;position:relative}
-.glass:before{content:"";position:absolute;inset:7px;pointer-events:none;border:1px dashed rgba(196,181,253,.09);opacity:.7}
-.links a{border-radius:0!important;font-family:var(--site-font-body);font-weight:400;font-size:.62rem}.links a:hover{border:2px solid #8b5cf6;box-shadow:4px 4px 0 #4c1d95;background:#171224}.nav-cta{border:3px solid #ddd6fe!important;box-shadow:5px 5px 0 #4c1d95!important}
-.game-icon{border-radius:0!important;box-shadow:4px 4px 0 #4c1d95;border:3px solid #6d5a8d}.game-icon img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}.avatar{border-radius:0!important;border:3px solid #b9a6d9;box-shadow:5px 5px 0 #4c1d95;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated}.badge,.chip,.eyebrow{border-radius:0!important;border-width:2px}
-.profile{display:inline-flex!important;align-items:center;justify-content:center;gap:7px;margin-top:12px;padding:10px 12px!important;border:2px solid #5865f2!important;background:rgba(88,101,242,.12)!important;color:#9ca8ff!important;min-width:150px;font-weight:900;box-shadow:4px 4px 0 #29358f!important}.profile:hover{background:#5865f2!important;color:#fff!important;transform:translate(-2px,-2px)!important}
-.about-card:nth-child(1){border-color:#8b5cf6!important;box-shadow:8px 8px 0 rgba(139,92,246,.35)!important}.about-card:nth-child(2){border-color:#facc15!important;box-shadow:8px 8px 0 rgba(250,204,21,.25)!important}.game:nth-child(5n+1){border-color:#8b5cf6!important;box-shadow:8px 8px 0 rgba(139,92,246,.32)!important}.game:nth-child(5n+2){border-color:#facc15!important;box-shadow:8px 8px 0 rgba(250,204,21,.25)!important}.game:nth-child(5n+3){border-color:#ef4444!important;box-shadow:8px 8px 0 rgba(239,68,68,.25)!important}.game:nth-child(5n+4){border-color:#22c55e!important;box-shadow:8px 8px 0 rgba(34,197,94,.25)!important}.game:nth-child(5n+5){border-color:#38bdf8!important;box-shadow:8px 8px 0 rgba(56,189,248,.25)!important}.event:nth-child(4n+1){border-color:#8b5cf6!important}.event:nth-child(4n+2){border-color:#facc15!important}.event:nth-child(4n+3){border-color:#ef4444!important}.event:nth-child(4n+4){border-color:#22c55e!important}.member:nth-child(4n+1){border-color:#8b5cf6!important}.member:nth-child(4n+2){border-color:#38bdf8!important}.member:nth-child(4n+3){border-color:#facc15!important}.member:nth-child(4n+4){border-color:#ef4444!important}.rule:nth-child(4n+1){border-color:#22c55e!important}.rule:nth-child(4n+2){border-color:#38bdf8!important}.rule:nth-child(4n+3){border-color:#facc15!important}.rule:nth-child(4n+4){border-color:#ef4444!important}.achievement:nth-child(4n+1){border-color:#8b5cf6!important}.achievement:nth-child(4n+2){border-color:#22c55e!important}.achievement:nth-child(4n+3){border-color:#38bdf8!important}.achievement:nth-child(4n+4){border-color:#facc15!important}.kicker{color:#38bdf8}.eyebrow{border-color:#facc15;color:#fde68a;background:rgba(250,204,21,.06)}.dot{background:#22c55e;box-shadow:0 0 16px #22c55e}.live{color:#86efac}.live i{background:#22c55e;box-shadow:0 0 12px #22c55e}.section-head h2{color:#f8fafc}.hero h1{background:linear-gradient(110deg,#8b5cf6 0%,#38bdf8 35%,#facc15 62%,#ef4444 82%,#22c55e 100%);-webkit-background-clip:text}.profile{color:#38bdf8}
-.hero h1{animation:glitch 4s steps(1,end) infinite;letter-spacing:.01em}
-.hero p,.section-head p,.about-card p,.game p,.event p,.rule p,.achievement p,.footer-brand p{font-size:.72rem;line-height:2.1}
-.section-head h2{font-size:clamp(1.7rem,4vw,3.2rem)}
-.game h3,.event h3,.member h3,.rule h3,.achievement h3,.about-card h3{font-size:.95rem;line-height:1.7}
-.kicker,.label,.live,.role,.profile,.rule-num,.year{font-size:.55rem!important;letter-spacing:.08em}
-.stat .value{font-family:var(--site-font-heading);font-size:1.45rem}
-.loader-logo{font-family:var(--site-font-heading);font-size:clamp(1.1rem,5vw,3rem);text-shadow:5px 5px 0 #3b275f}
-.loader-line{height:8px;border-radius:0;border:2px solid #ddd6fe;box-shadow:4px 4px 0 #4c1d95}
-.chip{border-style:dashed;border-color:rgba(167,139,250,.35)}
+/* classic molten red-gold-black skin */
+:root{--site-font-body:"Manrope",ui-sans-serif,system-ui,sans-serif;--site-font-heading:"Barlow Condensed",ui-sans-serif,system-ui,sans-serif}
+body{font-family:var(--site-font-body);background:#171305}
+.root{background:radial-gradient(circle at 50% -10%,rgba(255,218,92,.16),transparent 35%),linear-gradient(135deg,#0d0b04,#1d1707 48%,#080703)}
+.ambient:before{background:#f5c542;opacity:.24}.ambient:after{background:#ffd84d;opacity:.14}
+.hero h1,.section-head h2,h1,h2,h3,.brand{font-family:var(--site-font-heading);font-weight:900;letter-spacing:.015em;text-shadow:3px 3px 0 #250707,0 0 28px rgba(185,28,28,.2)}
+.btn{border-radius:10px!important;border:1px solid rgba(212,175,55,.55)!important;background:#101010!important;box-shadow:0 8px 25px rgba(0,0,0,.45)!important;font-family:var(--site-font-body);font-weight:900;letter-spacing:.03em;font-size:.72rem}
+.btn:hover{transform:translateY(-3px)!important;border-color:#f1c94a!important;box-shadow:0 12px 32px rgba(212,175,55,.16)!important}
+.btn.primary{background:linear-gradient(135deg,#991b1b,#dc2626)!important;border-color:#f5d76e!important;box-shadow:0 12px 32px rgba(185,28,28,.28)!important}
+.glass{border-radius:18px!important;background:linear-gradient(145deg,rgba(39,34,16,.72),rgba(9,9,5,.82))!important;border:1px solid rgba(255,218,92,.34)!important;box-shadow:0 18px 55px rgba(0,0,0,.58),0 0 30px rgba(212,175,55,.07),inset 0 1px 0 rgba(255,255,255,.08)!important;backdrop-filter:blur(20px)!important;position:relative;overflow:hidden}
+.glass:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 15%,rgba(239,68,68,.08),transparent 28%),linear-gradient(120deg,transparent 25%,rgba(212,175,55,.035) 50%,transparent 75%);background-size:auto,220% 100%;animation:molten 7s ease-in-out infinite}
+@keyframes molten{0%,100%{background-position:120% 0}50%{background-position:-40% 0}}
+.links a{border-radius:8px!important;font-family:var(--site-font-body);font-weight:900;font-size:.7rem}.links a:hover{border:1px solid rgba(212,175,55,.5);box-shadow:0 6px 20px rgba(185,28,28,.18);background:rgba(185,28,28,.12)}.nav-cta{border:1px solid #f1c94a!important;box-shadow:0 8px 25px rgba(185,28,28,.25)!important}
+.game-icon{border-radius:13px!important;box-shadow:0 8px 25px rgba(0,0,0,.45);border:1px solid rgba(212,175,55,.35);background:linear-gradient(135deg,rgba(185,28,28,.22),rgba(212,175,55,.08))}.game-icon img{width:34px;height:34px;object-fit:contain;image-rendering:auto}.avatar{border-radius:16px!important;border:1px solid #d4af37;box-shadow:0 10px 30px rgba(185,28,28,.22);overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;image-rendering:auto}.badge,.chip,.eyebrow{border-radius:999px!important;border-width:1px}
+.profile{display:inline-flex!important;align-items:center;justify-content:center;gap:7px;margin-top:12px;padding:10px 12px!important;border:1px solid rgba(88,101,242,.65)!important;background:rgba(88,101,242,.12)!important;color:#b8c0ff!important;min-width:150px;font-weight:900;box-shadow:0 8px 22px rgba(0,0,0,.35)!important}.profile:hover{background:#5865f2!important;color:#fff!important;transform:translateY(-2px)!important}
+.about-card:nth-child(1){border-color:#b91c1c!important;box-shadow:0 18px 55px rgba(185,28,28,.16)!important}.about-card:nth-child(2){border-color:#d4af37!important;box-shadow:0 18px 55px rgba(212,175,55,.12)!important}.game:nth-child(5n+1){border-color:#b91c1c!important}.game:nth-child(5n+2){border-color:#d4af37!important}.game:nth-child(5n+3){border-color:#22c55e!important}.game:nth-child(5n+4){border-color:#ef4444!important}.game:nth-child(5n+5){border-color:#d4af37!important}.event:nth-child(4n+1){border-color:#b91c1c!important}.event:nth-child(4n+2){border-color:#d4af37!important}.event:nth-child(4n+3){border-color:#22c55e!important}.event:nth-child(4n+4){border-color:#ef4444!important}.member:nth-child(4n+1){border-color:#d4af37!important}.member:nth-child(4n+2){border-color:#b91c1c!important}.member:nth-child(4n+3){border-color:#22c55e!important}.member:nth-child(4n+4){border-color:#d4af37!important}.rule:nth-child(4n+1){border-color:#22c55e!important}.rule:nth-child(4n+2){border-color:#d4af37!important}.rule:nth-child(4n+3){border-color:#b91c1c!important}.rule:nth-child(4n+4){border-color:#ef4444!important}.achievement:nth-child(4n+1){border-color:#d4af37!important}.achievement:nth-child(4n+2){border-color:#22c55e!important}.achievement:nth-child(4n+3){border-color:#b91c1c!important}.achievement:nth-child(4n+4){border-color:#ef4444!important}.kicker{color:#d4af37}.eyebrow{border-color:rgba(212,175,55,.55);color:#f1d67a;background:rgba(212,175,55,.06)}.dot{background:#22c55e;box-shadow:0 0 16px #22c55e}.live{color:#86efac}.live i{background:#22c55e;box-shadow:0 0 12px #22c55e}.section-head h2{color:#f5f5f5}.hero h1{background:linear-gradient(110deg,#ffffff 0%,#d4af37 35%,#ef4444 68%,#991b1b 100%);-webkit-background-clip:text}.profile{color:#b8c0ff}
+.hero h1{animation:glitch 4s steps(1,end) infinite;letter-spacing:-.035em}
+.hero p,.section-head p,.about-card p,.game p,.event p,.rule p,.achievement p,.footer-brand p{font-size:.86rem;line-height:1.8}
+.section-head h2{font-size:clamp(2rem,4vw,3.5rem)}
+.game h3,.event h3,.member h3,.rule h3,.achievement h3,.about-card h3{font-size:1.05rem;line-height:1.5}
+.kicker,.label,.live,.role,.profile,.rule-num,.year{font-size:.64rem!important;letter-spacing:.1em}
+.stat .value{font-family:var(--site-font-heading);font-size:2rem}
+.loader-logo{font-family:var(--site-font-heading);font-size:clamp(1.5rem,5vw,4rem);text-shadow:3px 3px 0 #4b0b0b}
+.loader-line{height:5px;border-radius:99px;border:1px solid #f1d67a;box-shadow:0 0 25px rgba(212,175,55,.25);background:linear-gradient(90deg,#7f1d1d,#d4af37,#22c55e)}
+.chip{border-style:solid;border-color:rgba(212,175,55,.3);background:rgba(212,175,55,.04)}
+/* page-book navigation */
+html{scroll-behavior:auto}body{overflow-x:hidden}.page{display:none!important;min-height:calc(100vh - 86px);padding-top:20px}.page.active{display:block!important;animation:pageTurn .7s cubic-bezier(.22,.61,.36,1)}
+@keyframes pageTurn{0%{opacity:0;transform:perspective(1200px) rotateY(-7deg) translateX(22px);filter:brightness(.65)}55%{opacity:1;transform:perspective(1200px) rotateY(2deg) translateX(0);filter:brightness(1.08)}100%{opacity:1;transform:none;filter:none}}
+.book-page{position:relative;min-height:calc(100vh - 120px);padding:64px 0 90px}.book-page:after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(transparent,rgba(212,175,55,.3),transparent);opacity:.35;pointer-events:none}
+.book-page{transform-style:preserve-3d;perspective:1400px}.book-page>.section-head,.book-page>.hero,.book-page>.about,.book-page>.grid-cards,.book-page>.team-grid,.book-page>.events,.book-page>.achievements,.book-page>.rules,.book-page>.rule-intro{transform-style:preserve-3d}
+.page-turn{position:fixed;inset:0;z-index:9998;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(212,175,55,.18),transparent);transform:translateX(-100%);opacity:0}.page-turn.go{animation:goldPage .8s ease}.page-turn:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,55,.18),transparent 45%)}
+@keyframes goldPage{0%{opacity:0;transform:translateX(-100%)}25%{opacity:1}100%{opacity:0;transform:translateX(100%)}}
+.page-travel{position:fixed;inset:0;z-index:9997;pointer-events:none;overflow:hidden;opacity:0;background:radial-gradient(circle at center,#16110a 0%,#050505 30%,#000 72%);perspective:900px}.page-travel.go{animation:halluTravel 1.15s cubic-bezier(.12,.82,.15,1)}.page-travel:before{content:"";position:absolute;inset:-55%;background:repeating-radial-gradient(ellipse at center,transparent 0 2.5%,rgba(212,175,55,.12) 3% 3.5%,transparent 4% 7%),repeating-conic-gradient(from 0deg at 50% 50%,transparent 0 7deg,rgba(212,175,55,.11) 7.5deg 8deg,transparent 8.5deg 16deg);transform:scale(.02) rotate(0deg);filter:blur(2px);animation:halluTunnel 1.15s cubic-bezier(.12,.82,.15,1)}.page-travel:after{content:"";position:absolute;left:50%;top:50%;width:18px;height:18px;border-radius:50%;transform:translate(-50%,-50%) scale(.1);background:#fff;box-shadow:0 0 18px #fff,0 0 55px #d4af37,0 0 110px #b91c1c,0 0 180px rgba(255,255,255,.5);animation:halluCore 1.15s cubic-bezier(.12,.82,.15,1)}
+@keyframes halluTravel{0%{opacity:0;filter:blur(0)}10%{opacity:1}42%{opacity:1;filter:blur(0)}72%{opacity:1;filter:blur(2px)}100%{opacity:0;filter:blur(9px)}}
+@keyframes halluTunnel{0%{transform:scale(.02) rotate(0deg);opacity:0}12%{opacity:1}45%{transform:scale(.7) rotate(28deg);opacity:1}72%{transform:scale(3.8) rotate(75deg);opacity:1}100%{transform:scale(15) rotate(125deg);opacity:0}}
+@keyframes halluCore{0%{transform:translate(-50%,-50%) scale(.1);opacity:0}20%{transform:translate(-50%,-50%) scale(.6);opacity:1}58%{transform:translate(-50%,-50%) scale(3);opacity:1}100%{transform:translate(-50%,-50%) scale(32);opacity:0}}
+.cursor-glow{position:fixed;width:260px;height:260px;border-radius:50%;pointer-events:none;z-index:9997;background:radial-gradient(circle,rgba(212,175,55,.13),rgba(185,28,28,.05) 32%,transparent 70%);transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .2s,height .2s;will-change:left,top}
+.glass{transform-style:preserve-3d;transition:transform .18s ease,box-shadow .25s ease,border-color .25s ease}.glass:hover{box-shadow:0 28px 75px rgba(0,0,0,.68),0 0 28px rgba(212,175,55,.12)!important;z-index:3}.game:hover,.achievement:hover,.member:hover,.event:hover,.rule:hover,.about-card:hover,.stat:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-7px) scale(1.015)}.game>* ,.achievement>* ,.member>* ,.event>* ,.rule>* ,.about-card>* ,.stat>*{transform:translateZ(18px)}
+.cursor-trail{position:fixed;width:7px;height:7px;border-radius:50%;pointer-events:none;z-index:9996;background:#d4af37;box-shadow:0 0 18px rgba(212,175,55,.7);transform:translate(-50%,-50%);opacity:.8}
+.event,.achievement{clip-path:polygon(0 0,96% 0,100% 7%,100% 100%,4% 100%,0 93%);border-style:dashed!important;box-shadow:0 18px 55px rgba(0,0,0,.58),0 0 28px rgba(212,175,55,.1),inset 0 0 25px rgba(255,218,92,.035)!important}
+.event:after,.achievement:after{content:"CRACKED • TICKET";position:absolute;top:13px;right:15px;padding:5px 8px;border:1px solid rgba(255,218,92,.55);background:rgba(20,16,5,.7);color:#f6d76b;font-size:.5rem;font-weight:900;letter-spacing:.16em;transform:rotate(2deg);box-shadow:0 0 16px rgba(212,175,55,.12);pointer-events:none}
+.crack-burst{position:fixed;z-index:10001;pointer-events:none;width:180px;height:180px;transform:translate(-50%,-50%);animation:crackBurst .8s ease-out forwards;background:radial-gradient(circle,rgba(255,240,170,.4) 0 2%,transparent 3%),conic-gradient(from 0deg,transparent 0 7deg,rgba(255,230,130,.85) 7.5deg 8deg,transparent 8.5deg 20deg,rgba(255,255,255,.6) 20.5deg 21deg,transparent 21.5deg 40deg,rgba(185,28,28,.6) 40.5deg 41deg,transparent 41.5deg 360deg);filter:drop-shadow(0 0 10px rgba(212,175,55,.8));}
+@keyframes crackBurst{0%{opacity:0;transform:translate(-50%,-50%) scale(.12) rotate(0)}18%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.4) rotate(32deg)}}
+.interactive:hover~.cursor-glow{width:330px;height:330px}
+.book-intro{position:fixed;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 48%,rgba(212,175,55,.12),transparent 38%),#050505;z-index:10000;perspective:1600px;transition:opacity .8s ease,visibility .8s ease}.book-intro.opened{opacity:0;visibility:hidden;pointer-events:none}.book-stage{width:min(82vw,560px);height:min(62vw,420px);position:relative;transform-style:preserve-3d;filter:drop-shadow(0 30px 55px rgba(0,0,0,.7))}.book-cover{position:absolute;inset:0;border:2px solid #d4af37;border-radius:8px 18px 18px 8px;background:linear-gradient(145deg,#250707,#090909 55%,#151006);box-shadow:inset 0 0 0 5px rgba(212,175,55,.08),inset 18px 0 35px rgba(0,0,0,.5),0 0 45px rgba(212,175,55,.12);transform-origin:left center;transform-style:preserve-3d;z-index:3;transition:transform 3.1s cubic-bezier(.77,0,.18,1)}.book-cover:before{content:"";position:absolute;inset:16px;border:1px solid rgba(212,175,55,.5);border-radius:4px}.book-cover:after{content:"";position:absolute;left:24px;top:22px;bottom:22px;width:4px;background:linear-gradient(#7f1d1d,#d4af37,#7f1d1d);border-radius:99px;opacity:.7}.book-title{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:40px;backface-visibility:hidden}.book-title strong{display:block;font-family:var(--site-font-heading);font-size:clamp(2.2rem,7vw,4.8rem);letter-spacing:.05em;color:#f1d67a;text-shadow:3px 4px 0 #4b0b0b,0 0 28px rgba(212,175,55,.25)}.book-title span{display:block;margin-top:14px;color:#b91c1c;font-size:.72rem;font-weight:900;letter-spacing:.28em}.book-pages{position:absolute;inset:8px 12px 8px 18px;border-radius:4px 14px 14px 4px;background:repeating-linear-gradient(0deg,#d8c89b 0 2px,#eee2b8 2px 4px);box-shadow:inset -12px 0 18px rgba(78,43,10,.18);z-index:1}.book-back{position:absolute;inset:0;border:2px solid #8b6b1f;border-radius:8px 18px 18px 8px;background:#180909;z-index:0}.book-stage.open .book-cover{transform:rotateY(-148deg)}.book-stage.open{animation:bookOpen 1.2s ease}.book-intro-sub{position:absolute;bottom:8%;font-size:.65rem;letter-spacing:.22em;color:#8f7b48;text-transform:uppercase}.book-stage:after{content:"";position:absolute;left:50%;top:6%;bottom:6%;width:1px;background:rgba(87,53,15,.22);z-index:2}
+@keyframes bookOpen{50%{transform:scale(1.02)}100%{transform:scale(1)}}
+.book-stage.open .book-pages{animation:pageGlow 2.8s ease forwards}.book-stage.open:before{content:"";position:absolute;inset:-25px;border-radius:20px;background:radial-gradient(circle,rgba(212,175,55,.18),transparent 62%);filter:blur(12px);z-index:-1;animation:bookHalo 2.8s ease}.book-intro.opened .book-stage{animation:bookRevealOut .8s ease forwards}.book-intro-sub{transition:opacity .4s ease}.book-intro:after{content:"PAGE FOUND";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--site-font-heading);font-size:clamp(1rem,2.2vw,1.8rem);letter-spacing:.28em;color:#f1d67a;text-shadow:0 0 22px rgba(212,175,55,.55);opacity:0;animation:foundPage 3.3s ease-in-out 1.2s forwards;pointer-events:none}.book-intro.opened:after{opacity:0}@keyframes pageGlow{0%,100%{filter:brightness(1)}45%{filter:brightness(1.18)}}@keyframes bookHalo{0%{opacity:0;transform:scale(.8)}45%{opacity:1;transform:scale(1.05)}100%{opacity:0;transform:scale(1.2)}}@keyframes bookRevealOut{0%{transform:scale(1)}100%{transform:scale(1.04)}}@keyframes foundPage{0%,20%{opacity:0;transform:translate(-50%,-50%) scale(.8)}35%,68%{opacity:1;transform:translate(-50%,-50%) scale(1)}82%,100%{opacity:0;transform:translate(-50%,-50%) scale(1.08)}}
+header .brand{position:relative;overflow:hidden;display:inline-block;padding:5px 2px;transform-style:preserve-3d;animation:brandPrint 1.4s steps(8,end) both,brandGlitch 7s steps(1,end) infinite 2s}header .brand:after{content:"";position:absolute;left:-120%;top:0;width:75%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),rgba(212,175,55,.7),transparent);transform:skewX(-22deg);animation:brandSweep 5.5s ease-in-out infinite}@keyframes brandSweep{0%,62%{left:-120%;opacity:0}70%{opacity:1}86%,100%{left:145%;opacity:0}}@keyframes brandPrint{0%{opacity:0;filter:blur(8px);letter-spacing:.5em;transform:scaleX(.72)}18%{opacity:1;filter:blur(0);letter-spacing:.12em;transform:scaleX(1)}100%{opacity:1;filter:none;letter-spacing:.12em;transform:none}}@keyframes brandGlitch{0%,92%,100%{transform:translateZ(0)}93%{transform:translate(-2px,1px) skewX(-7deg);text-shadow:2px 0 #22c55e,-2px 0 #ef4444}95%{transform:translate(2px,-1px) skewX(5deg)}97%{transform:translateZ(0)}}
+.brand:before{content:"BOOK";position:absolute;right:-5px;top:-13px;font-size:.38rem;letter-spacing:.08em;color:#d4af37;opacity:0;transform:scale(.4) rotate(-18deg);animation:brandBook 8s ease-in-out infinite 2.5s;text-shadow:0 0 8px rgba(212,175,55,.8)}@keyframes brandBook{0%,72%,100%{opacity:0;transform:translateY(8px) scale(.4) rotate(-18deg)}76%{opacity:1;transform:translateY(0) scale(1) rotate(0)}84%{opacity:1;transform:translateY(-2px) scale(1.05) rotate(4deg)}90%{opacity:0;transform:translateY(-7px) scale(.6) rotate(12deg)}}
+@media (prefers-reduced-motion:no-preference){.glass{will-change:transform}.book-intro:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 12px,rgba(212,175,55,.018) 13px 14px);mix-blend-mode:screen;animation:bookAtmosphere 4s linear infinite}@keyframes bookAtmosphere{to{transform:translateX(28px)}}}
+@media(max-width:760px){.book-page{padding:42px 0 70px}.book-page:after{display:none}.cursor-glow,.cursor-trail{display:none}}
+section.page-hidden{display:none!important}
 @media(max-width:900px){.links{display:none}.menu{display:block}.links.open{display:flex;position:absolute;top:72px;left:18px;right:18px;flex-direction:column;align-items:stretch;padding:12px;background:rgba(12,10,24,.95);border:1px solid rgba(255,255,255,.08);border-radius:16px}.about{grid-template-columns:1fr}.grid-cards{grid-template-columns:repeat(2,1fr)}.team-grid{grid-template-columns:repeat(2,1fr)}.member.owner{grid-column:span 2}.achievements{grid-template-columns:1fr 1fr}.event{grid-template-columns:1fr auto}}
 @media(max-width:600px){.hero h1{font-size:clamp(3.5rem,20vw,6rem)}section{padding:75px 16px}.grid-cards,.rules,.achievements,.stats{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}.member.owner{grid-column:span 1;display:block;text-align:center}.owner .avatar{margin:0 auto}.event{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:14px}.footer-inner{display:block}.footer-links{margin-top:25px}.cursor{display:none}}
+
+/* ERRORS LOUNGE — yellow glass + real glass physics */
+body{background:#f5c51b!important;color:#241b00!important} .root{background:linear-gradient(135deg,#f0b900 0%,#ffd83d 42%,#f7c51d 70%,#e8ae00 100%)!important} .ambient:before{background:#fff3a6!important;opacity:.28!important}.ambient:after{background:#fff!important;opacity:.16!important}.grid{background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px)!important}
+header{background:rgba(255,244,181,.62)!important;border-bottom:1px solid rgba(102,72,0,.22)!important;backdrop-filter:blur(22px)}.brand,.brand span{color:#3b2a00!important;text-shadow:none!important}.links a{color:#4a3600!important}.links a:hover{color:#1f1600!important;background:rgba(255,255,255,.34)!important}.menu{color:#3b2a00!important;border-color:rgba(73,51,0,.25)!important}
+.hero h1,.section-head h2,h1,h2,h3,.brand{color:#3b2a00!important;text-shadow:0 2px 0 rgba(255,255,255,.45)!important}.hero h1{background:linear-gradient(110deg,#211700,#7b5600 48%,#d99b00 100%)!important;-webkit-background-clip:text!important;color:transparent!important;animation:none!important}.hero p,.section-head p,.about-card p,.game p,.event p,.rule p,.achievement p,.footer-brand p{color:#4c3b12!important}.kicker,.rule-num,.year,.role{color:#8b6200!important}.eyebrow{color:#614600!important;background:rgba(255,255,255,.28)!important;border-color:rgba(112,78,0,.25)!important}.dot{background:#fff!important;box-shadow:0 0 16px #fff!important}.live{color:#6d5100!important}.live i{background:#fff!important;box-shadow:0 0 12px #fff!important}
+.glass{background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.28) 48%,rgba(255,247,201,.18))!important;border:1px solid rgba(255,255,255,.72)!important;box-shadow:0 22px 55px rgba(93,63,0,.18),0 2px 0 rgba(255,255,255,.72) inset,0 -1px 0 rgba(119,80,0,.14) inset!important;backdrop-filter:blur(24px) saturate(135%)!important;color:#2d2100!important}.glass:before{background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.28) 47%,transparent 66%)!important;animation:glassShine 6s ease-in-out infinite!important}.glass>*{position:relative;z-index:1}.stat .label,.member p,.event-date small{color:#765b18!important}.chip,.badge{color:#6d4e00!important;background:rgba(255,255,255,.3)!important;border-color:rgba(111,77,0,.22)!important}.btn{background:rgba(255,255,255,.32)!important;color:#3d2b00!important;border-color:rgba(90,61,0,.3)!important;box-shadow:0 10px 25px rgba(85,58,0,.15)!important}.btn.primary{background:linear-gradient(135deg,#8d5d00,#d49a00)!important;color:#fff!important;border-color:rgba(255,255,255,.65)!important}.profile{background:rgba(255,255,255,.35)!important;color:#493600!important;border-color:rgba(70,48,0,.25)!important}.profile:hover{background:#4d3a00!important;color:#fff!important}.game-icon{background:rgba(255,255,255,.36)!important;border-color:rgba(101,70,0,.2)!important}.event,.achievement{clip-path:none!important;border-style:solid!important;box-shadow:0 22px 55px rgba(93,63,0,.18),0 2px 0 rgba(255,255,255,.72) inset!important}.event:after,.achievement:after{content:none!important}
+.loader{background:#f4c51c!important}.loader-logo{background:linear-gradient(100deg,#3b2a00,#8b6200,#d89b00)!important;-webkit-background-clip:text!important;color:transparent!important;text-shadow:none!important}.loader-line{background:linear-gradient(90deg,#8b5d00,#f7d04a,#8b5d00)!important}.book-intro{background:radial-gradient(circle at 50% 48%,rgba(255,255,255,.35),transparent 38%),#efbe13!important}.book-cover{background:linear-gradient(145deg,#d39b08,#f7cd3b 55%,#b97900)!important;border-color:#fff1a8!important}.book-back{background:#c68c00!important;border-color:#8a5b00!important}.book-title strong{color:#fff6c9!important;text-shadow:2px 3px 0 #805600,0 0 28px rgba(255,255,255,.35)!important}.book-title span{color:#5c4100!important}.book-intro-sub{color:#6b4b00!important}.book-pages{background:repeating-linear-gradient(0deg,#fff4bd 0 2px,#fffbe1 2px 4px)!important}
+@keyframes glassShine{0%,100%{transform:translateX(-35%);opacity:.15}50%{transform:translateX(35%);opacity:.5}}
+.page-glass-shatter{position:fixed;inset:0;z-index:10002;pointer-events:none;overflow:hidden;opacity:0}.page-glass-shatter.go{opacity:1}.glass-shard{position:absolute;top:-8vh;left:50%;width:var(--w);height:var(--h);background:linear-gradient(135deg,rgba(255,255,255,.48),rgba(255,255,255,.12) 45%,rgba(255,218,77,.2));border:1px solid rgba(255,255,255,.68);box-shadow:0 0 18px rgba(255,255,255,.2),inset 0 0 10px rgba(255,255,255,.2);clip-path:polygon(50% 0,100% 18%,84% 100%,12% 82%,0 30%);backdrop-filter:blur(3px);animation:glassFall var(--dur) cubic-bezier(.18,.78,.2,1) forwards;transform:translate3d(var(--x),-18vh,0) rotate(var(--r)) scale(var(--s));opacity:0}.glass-shard:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.75) 48%,transparent 64%);animation:shardFlash .5s ease-out forwards}.page-glass-shatter.go .glass-shard{opacity:1}@keyframes glassFall{0%{opacity:0;transform:translate3d(var(--x),-20vh,0) rotate(var(--r0)) scale(.35)}12%{opacity:.95}45%{opacity:.9}100%{opacity:0;transform:translate3d(calc(var(--x) + var(--drift)),115vh,0) rotate(var(--r)) scale(var(--s))}}@keyframes shardFlash{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.tap-glass{position:fixed;z-index:10003;pointer-events:none;width:0;height:0}.tap-glass .crack-core{position:absolute;width:18px;height:18px;border:2px solid rgba(255,255,255,.95);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 22px rgba(255,255,255,.9),0 0 45px rgba(255,220,85,.55)}.tap-glass .crack-line{position:absolute;left:0;top:0;width:2px;height:clamp(90px,18vw,220px);transform-origin:0 0;background:linear-gradient(rgba(255,255,255,.95),rgba(255,255,255,.18),transparent);filter:drop-shadow(0 0 5px rgba(255,255,255,.7));animation:crackGrow .48s ease-out forwards}.tap-glass .crack-ring{position:absolute;left:0;top:0;width:clamp(180px,35vw,460px);height:clamp(180px,35vw,460px);border:1px solid rgba(255,255,255,.75);border-radius:50%;transform:translate(-50%,-50%) scale(.15);animation:crackRing .7s ease-out forwards}.tap-shard{position:fixed;z-index:10004;pointer-events:none;width:var(--w);height:var(--h);background:linear-gradient(135deg,rgba(255,255,255,.58),rgba(255,224,103,.18));border:1px solid rgba(255,255,255,.8);clip-path:polygon(50% 0,100% 70%,25% 100%,0 35%);animation:tapShardUp .9s cubic-bezier(.16,.78,.18,1) forwards;box-shadow:0 0 12px rgba(255,255,255,.35)}@keyframes crackGrow{0%{height:0;opacity:0}25%{opacity:1}100%{height:var(--len);opacity:0}}@keyframes crackRing{0%{opacity:0;transform:translate(-50%,-50%) scale(.15)}18%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.15)}}@keyframes tapShardUp{0%{opacity:0;transform:translate3d(0,0,0) rotate(0) scale(.4)}15%{opacity:1}100%{opacity:0;transform:translate3d(var(--dx),var(--dy),0) rotate(var(--rot)) scale(1)}}
+.page-turn{display:none!important}.page-travel{background:rgba(255,220,76,.08)!important;backdrop-filter:blur(1px)}.page-travel:before{opacity:.32;filter:blur(3px)}.page-travel:after{box-shadow:0 0 20px #fff,0 0 70px #fff0a0!important}
 </style>
 </head>
 <body>
 <div class="root">
 <div class="ambient"></div><div class="grid"></div>
+<div class="book-intro" id="bookIntro"><div class="book-stage" id="bookStage"><div class="book-back"></div><div class="book-pages"></div><div class="book-cover"><div class="book-title"><div><strong>ERRORS<br>BOOK</strong><span>ERRORS LOUNGE</span></div></div></div></div><div class="book-intro-sub">Opening the lounge</div></div>
+<div class="page-turn"></div>
+<div class="page-travel" id="pageTravel"></div><div class="page-glass-shatter" id="pageGlassShatter"></div>
 <div class="loader" id="loader"><div class="loader-inner"><div class="loader-logo">ERRORS LOUNGE</div><div class="loader-line"></div></div></div>
 <header><nav class="nav"><a href="#home" class="brand">ERRORS <span>LOUNGE</span></a><div class="links" id="links">
-<a href="#home">HOME</a><a href="#community">COMMUNITY</a><a href="#gaming">GAMING</a><a href="#events">EVENTS</a><a href="#team">ERROR TEAM</a><a href="#rules">RULES</a><a class="nav-cta" href="https://discord.gg/A3Cdp5RzM" target="_blank">JOIN DISCORD</a>
+<a href="#home">HOME</a><a href="#info">INFO</a><a href="#team">TEAM</a><a href="#events">EVENTS</a><a href="#achievements">ACHIEVEMENTS</a><a class="nav-cta" href="https://discord.gg/A3Cdp5RzM" target="_blank">JOIN DISCORD</a>
 </div><button class="menu" id="menu">☰</button></nav></header>
 <main>
-<section class="hero" id="home"><div class="hero-content">
+<section class="page book-page active" id="home"><div class="hero"><div class="hero-content">
 <div class="eyebrow"><span class="dot"></span> A COMMUNITY FOR ERRORS</div>
 <h1>ERRORS<br>LOUNGE</h1>
 <p>Are You An Error? Find Your Errors and Beat Your Errors.</p>
-<div class="actions"><a class="btn primary" href="https://discord.gg/A3Cdp5RzM" target="_blank">JOIN DISCORD ↗</a><a class="btn" href="#community">EXPLORE COMMUNITY ↓</a></div>
+<div class="actions"><a class="btn primary" href="https://discord.gg/A3Cdp5RzM" target="_blank">JOIN DISCORD ↗</a><a class="btn" href="#info">EXPLORE INFO →</a></div>
 <div class="stats"><div class="stat glass"><div class="label">Members</div><div class="value" id="members">—</div><div class="live"><i></i> Live • refreshes every 10s</div></div><div class="stat glass"><div class="label">Online Now</div><div class="value" id="online">—</div><div class="live"><i></i> Live • refreshes every 10s</div></div></div>
-</div></section>
-<section id="community"><div class="section-head"><div><div class="kicker">The Lounge</div><h2>Find your people.</h2></div><p>A place for friends to chill, game, share memes and mess around. Keep the vibes good.</p></div>
-<div class="about"><div class="glass about-card"><h3>Are You An Error?</h3><p>ERRORS LOUNGE is built around one simple idea: good people, good games and zero pressure. Jump in for a session, stay for the chaos, and make the community your own.</p><div class="chips"><span class="chip">Gaming</span><span class="chip">Chill</span><span class="chip">Memes</span><span class="chip">Community</span></div></div><div class="glass about-card"><h3>Good vibes only.</h3><p>Play, laugh and lose together. Whether you're here for competitive games or just to hang out, there's always a place in the lounge.</p><a class="btn primary" href="https://discord.gg/A3Cdp5RzM" target="_blank">ENTER THE LOUNGE ↗</a></div></div></section>
-<section id="gaming"><div class="section-head"><div><div class="kicker">Game Room</div><h2>Play with us.</h2></div><p>Pick your game, hit play with us, and pull up to ERRORS LOUNGE.</p></div><div class="grid-cards" id="games"></div></section>
-<section id="events"><div class="section-head"><div><div class="kicker">What's happening</div><h2>Events.</h2></div><p>Community nights, gaming sessions and anything worth making a little noise about.</p></div><div class="events" id="eventsList"></div></section>
-<section id="team"><div class="section-head"><div><div class="kicker">The people behind it</div><h2>ERROR TEAM.</h2></div><p>Meet the people keeping the lounge moving.</p></div><div class="team-grid" id="teamGrid"></div></section>
-<section id="rules"><div class="section-head"><div><div class="kicker">Keep the vibe good</div><h2>Rules.</h2></div><p>Simple rules. Good people. Better memories.</p></div><div class="glass rule-intro">Just a place for friends to chill, game, share memes and mess around. <strong>Keep the vibes good.</strong> That's it. We're all here to have fun, so keep it chill and enjoy the errors.</div><div class="rules" id="rulesList"></div></section>
-<section id="highlights"><div class="section-head"><div><div class="kicker">Moments</div><h2>Highlights.</h2></div><p>Milestones and moments worth remembering.</p></div><div class="achievements" id="achievements"></div></section>
+</div></div></section>
+<section class="page book-page" id="info"><div class="section-head"><div><div class="kicker">The Lounge</div><h2>Find your people.</h2></div><p>A place for friends to chill, game, share memes and mess around. Keep the vibes good.</p></div>
+<div class="about"><div class="glass about-card"><h3>Are You An Error?</h3><p>ERRORS LOUNGE is built around one simple idea: good people, good games and zero pressure. Jump in for a session, stay for the chaos, and make the community your own.</p><div class="chips"><span class="chip">Gaming</span><span class="chip">Chill</span><span class="chip">Memes</span><span class="chip">Community</span></div></div><div class="glass about-card"><h3>Good vibes only.</h3><p>Play, laugh and lose together. Whether you're here for competitive games or just to hang out, there's always a place in the lounge.</p><a class="btn primary" href="https://discord.gg/A3Cdp5RzM" target="_blank">ENTER THE LOUNGE ↗</a></div></div>
+<div class="section-head"><div><div class="kicker">Game Room</div><h2>Play with us.</h2></div><p>Pick your game, hit play with us, and pull up to ERRORS LOUNGE.</p></div><div class="grid-cards" id="games"></div>
+<div class="section-head" style="margin-top:80px"><div><div class="kicker">Keep the vibe good</div><h2>Rules.</h2></div><p>Simple rules. Good people. Better memories.</p></div><div class="glass rule-intro">Just a place for friends to chill, game, share memes and mess around. <strong>Keep the vibes good.</strong> That's it. We're all here to have fun, so keep it chill and enjoy the errors.</div><div class="rules" id="rulesList"></div></section>
+<section class="page book-page" id="team"><div class="section-head"><div><div class="kicker">The people behind it</div><h2>ERROR TEAM.</h2></div><p>Meet the people keeping the lounge moving.</p></div><div class="team-grid" id="teamGrid"></div></section>
+<section class="page book-page" id="events"><div class="section-head"><div><div class="kicker">What's happening</div><h2>Events.</h2></div><p>Community nights, gaming sessions and anything worth making a little noise about.</p></div><div class="events" id="eventsList"></div></section>
+<section class="page book-page" id="achievements"><div class="section-head"><div><div class="kicker">Moments</div><h2>Achievements.</h2></div><p>Milestones and moments worth remembering.</p></div><div class="achievements" id="achievementsList"></div></section>
 </main>
-<footer><div class="footer-inner"><div class="footer-brand"><h3>ERRORS LOUNGE</h3><p>Are You An Error? Find Your Errors and Beat Your Errors.</p></div><div class="footer-links"><a href="#home">Home</a><a href="#community">Community</a><a href="#gaming">Gaming</a><a href="#events">Events</a><a href="#team">Error Team</a><a href="#rules">Rules</a><a href="https://discord.gg/A3Cdp5RzM" target="_blank">Discord ↗</a></div></div><div class="copy">© 2026 ERRORS LOUNGE. Built for the errors.</div></footer>
+<footer><div class="footer-inner"><div class="footer-brand"><h3>ERRORS LOUNGE</h3><p>Are You An Error? Find Your Errors and Beat Your Errors.</p></div><div class="footer-links"><a href="#home">Home</a><a href="#info">Info</a><a href="#team">Team</a><a href="#events">Events</a><a href="#achievements">Achievements</a><a href="https://discord.gg/A3Cdp5RzM" target="_blank">Discord ↗</a></div></div><div class="copy">© 2026 ERRORS LOUNGE. Built for the errors.</div></footer>
 </div>
-<div class="cursor" id="cursor"></div>
+<div class="cursor" id="cursor"></div><div class="cursor-glow" id="cursorGlow"></div><div class="cursor-trail" id="cursorTrail"></div>
 <script>
 const team = [{"name": "Saberj3lly", "role": "Owner", "id": "1017080813382291476", "avatar": "", "profile": "https://discord.com/users/1017080813382291476"}, {"name": "TONY SHELBY", "role": "Manager", "id": "876754280965632050", "avatar": "", "profile": "https://discord.com/users/876754280965632050"}, {"name": "TRICKY", "role": "Manager", "id": "947144654493741127", "avatar": "", "profile": "https://discord.com/users/947144654493741127"}, {"name": "KOYA", "role": "Manager", "id": "1361259226000785460", "avatar": "", "profile": "https://discord.com/users/1361259226000785460"}, {"name": "TONY PRIME", "role": "Manager", "id": "852192947548979210", "avatar": "", "profile": "https://discord.com/users/852192947548979210"}];
 const games = [{"name": "Valorant", "description": "Competitive tactical FPS \u2014 squad up, clutch rounds and keep the comms alive.", "icon": "VAL", "logo": "https://cdn.simpleicons.org/valorant", "invite": "https://discord.gg/A3Cdp5RzM"}, {"name": "FiveM", "description": "Build stories, run cities and create chaos together in the streets.", "icon": "FM", "logo": "https://cdn.simpleicons.org/fivem", "invite": "https://discord.gg/A3Cdp5RzM"}, {"name": "Free Fire", "description": "Fast matches, sharp plays and squad energy.", "icon": "FF", "logo": "https://cdn.simpleicons.org/garena", "invite": "https://discord.gg/A3Cdp5RzM"}, {"name": "PUBG PC", "description": "Drop in, survive longer and chase that chicken dinner.", "icon": "PUBG", "logo": "https://cdn.simpleicons.org/pubg", "invite": "https://discord.gg/A3Cdp5RzM"}, {"name": "SA-MP", "description": "Classic multiplayer chaos, roleplay and community nights.", "icon": "SA", "logo": "https://cdn.simpleicons.org/samp", "invite": "https://discord.gg/A3Cdp5RzM"}];
@@ -109,13 +153,16 @@ document.getElementById('eventsList').innerHTML = events.map(e=>{
 }).join('');
 
 document.getElementById('rulesList').innerHTML = rules.map((r,i)=>`<article class="rule glass"><div class="rule-num">RULE ${String(i+1).padStart(2,'0')}</div><h3>${r[0]}</h3><p>${r[1]}</p></article>`).join('');
-document.getElementById('achievements').innerHTML = achievements.map(a=>`<article class="achievement glass"><div class="year">${a.date} · ${a.category}</div><h3>${a.title}</h3><p>${a.description}</p></article>`).join('');
+document.getElementById('achievementsList').innerHTML = achievements.map(a=>`<article class="achievement glass">${a.image?`<img src="${a.image}" alt="${a.title}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.parentElement.classList.add('image-missing');this.style.display='none'">`:''}<div class="year">${a.date} · ${a.category}</div><h3>${a.title}</h3><p>${a.description}</p></article>`).join('');
 
 const menu=document.getElementById('menu'), links=document.getElementById('links');
 menu.onclick=()=>links.classList.toggle('open');
 links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
 
-setTimeout(()=>document.getElementById('loader').classList.add('hide'),900);
+setTimeout(()=>document.getElementById('loader').classList.add('hide'),3600);
+const bookIntro=document.getElementById('bookIntro'),bookStage=document.getElementById('bookStage');
+setTimeout(()=>bookStage.classList.add('open'),1100);
+setTimeout(()=>bookIntro.classList.add('opened'),4000);
 
 const DISCORD_GUILD_ID='1462764372219920511';
 const DISCORD_INVITE='A3Cdp5RzM';
@@ -123,28 +170,25 @@ async function updateStats(){
   const members=document.getElementById('members');
   const online=document.getElementById('online');
   try{
-    const res=await fetch(`/api/discord/stats?t=${Date.now()}`,{cache:'no-store'});
-    if(!res.ok) throw new Error('Live Discord backend unavailable');
+    const res=await fetch(`https://discord.com/api/v10/invites/${DISCORD_INVITE}?with_counts=true&with_expiration=true&t=${Date.now()}`,{cache:'no-store'});
+    if(!res.ok) throw new Error('Discord invite stats unavailable');
     const data=await res.json();
-    members.textContent=typeof data.members==='number'?data.members.toLocaleString():'—';
-    online.textContent=typeof data.online==='number'?data.online.toLocaleString():'—';
+    const guild=data.guild||{};
+    if(typeof guild.approximate_member_count!=='number') throw new Error('Member count unavailable');
+    members.textContent=guild.approximate_member_count.toLocaleString();
+    online.textContent=(guild.approximate_presence_count??0).toLocaleString();
   }catch(error){
-    members.textContent='—';
-    online.textContent='—';
-  }
-}
-
-async function updateLiveTeam(){
-  try{
-    const res=await fetch(`/api/team?t=${Date.now()}`,{cache:'no-store'});
-    if(!res.ok) throw new Error('Live team backend unavailable');
-    const data=await res.json();
-    if(Array.isArray(data.members) && data.members.length){
-      team.splice(0,team.length,...data.members);
-      renderAll();
+    try{
+      const res=await fetch(`https://discord.com/api/guilds/${DISCORD_GUILD_ID}/widget.json?t=${Date.now()}`,{cache:'no-store'});
+      if(!res.ok) throw new Error('Discord widget unavailable');
+      const data=await res.json();
+      if(typeof data.approximate_member_count!=='number') throw new Error('Member count unavailable');
+      members.textContent=data.approximate_member_count.toLocaleString();
+      online.textContent=(data.presence_count??data.approximate_presence_count??0).toLocaleString();
+    }catch(fallbackError){
+      members.textContent='—';
+      online.textContent='—';
     }
-  }catch(error){
-    // Keep the configured team cards if the backend is temporarily unavailable.
   }
 }
 
@@ -166,12 +210,14 @@ async function loadConfig(){
   }catch(error){console.warn('Config files could not be loaded; using embedded defaults.',error);}
 }
 
+setInterval(loadConfig,2000);
+
 function renderAll(){
 document.getElementById('teamGrid').innerHTML = team.map((m,i)=>{
  const id=String(m.id||m.discordId||'');
  const name=String(m.name||'ERROR MEMBER');
  const initials=name.replace(/[^a-zA-Z0-9 ]/g,'').trim().split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase()||'ER';
- const avatar=m.avatar || (id ? `https://cdn.discordapp.com/embed/avatars/${Number((BigInt(id)>>22n)%6n)}.png` : '');
+ const avatar=(m.avatar && !m.avatar.includes('/placeholder.png')) ? m.avatar : (id ? `https://cdn.discordapp.com/embed/avatars/${Number((BigInt(id)>>22n)%6n)}.png` : '');
  const profile=m.profile || (id ? `https://discord.com/users/${id}` : 'https://discord.com');
  return `<article class="member glass ${i===0?'owner':''}">
   <div class="avatar">${avatar?`<img src="${avatar}" alt="${name}" onerror="this.remove();this.parentElement.innerHTML='<span>${initials}</span>'">`:`<span>${initials}</span>`}</div>
@@ -181,23 +227,82 @@ document.getElementById('teamGrid').innerHTML = team.map((m,i)=>{
 }).join('');
 document.getElementById('games').innerHTML = games.map(g=>`
 <article class="game glass"><div class="game-icon"><img src="${g.logo||''}" alt="${g.name} logo" onerror="this.style.display='none';this.parentElement.textContent='${g.icon||g.name.slice(0,2).toUpperCase()}'"></div><h3>${g.name}</h3><p>${g.description}</p><a class="btn primary" href="${g.invite||'https://discord.gg/A3Cdp5RzM'}" target="_blank">PLAY WITH US ↗</a></article>`).join('');
-document.getElementById('eventsList').innerHTML = events.map(e=>{const d=new Date(e.date+'T00:00:00');const date=d.toLocaleDateString('en-US',{month:'short',day:'2-digit'});return `<article class="event glass"><div class="event-date"><small>${date}</small>${e.time}</div><div>${e.game?`<span class="kicker">${e.game}</span>`:''}<span class="badge">${e.status}</span><h3>${e.title}</h3><p>${e.description}</p></div><a class="btn primary" href="${e.invite||'https://discord.gg/A3Cdp5RzM'}" target="_blank">REGISTER ↗</a></article>`}).join('');
+document.getElementById('eventsList').innerHTML = events.map(e=>{const d=new Date(e.date+'T00:00:00');const date=d.toLocaleDateString('en-US',{month:'short',day:'2-digit'});const register=e.status!=='COMPLETED'?`<a class="btn primary" href="${e.invite||'https://discord.gg/A3Cdp5RzM'}" target="_blank">REGISTER ↗</a>`:`<span class="badge">EVENT COMPLETED</span>`;return `<article class="event glass"><div class="event-date"><small>${date}</small>${e.time}</div><div>${e.game?`<span class="kicker">${e.game}</span>`:''}<span class="badge">${e.status}</span><h3>${e.title}</h3><p>${e.description}</p></div>${register}</article>`}).join('');
 document.getElementById('rulesList').innerHTML = rules.map((r,i)=>`<article class="rule glass"><div class="rule-num">RULE ${String(i+1).padStart(2,'0')}</div><h3>${r[0]}</h3><p>${r[1]}</p></article>`).join('');
-document.getElementById('achievements').innerHTML = achievements.map(a=>`<article class="achievement glass"><div class="year">${a.date} · ${a.category}</div><h3>${a.title}</h3><p>${a.description}</p></article>`).join('');
+document.getElementById('achievementsList').innerHTML = achievements.map(a=>`<article class="achievement glass">${a.image?`<img src="${a.image}" alt="${a.title}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.style.display='none'">`:''}<div class="year">${a.date} · ${a.category}</div><h3>${a.title}</h3><p>${a.description}</p></article>`).join('');
+}
+
+function playPageGlass(){
+ const layer=document.getElementById('pageGlassShatter');
+ if(!layer)return;
+ layer.innerHTML='';
+ for(let i=0;i<30;i++){
+  const shard=document.createElement('span');
+  shard.className='glass-shard';
+  shard.style.setProperty('--w',`${40+Math.random()*150}px`);
+  shard.style.setProperty('--h',`${30+Math.random()*120}px`);
+  shard.style.setProperty('--x',`${(Math.random()-.5)*115}vw`);
+  shard.style.setProperty('--drift',`${(Math.random()-.5)*28}vw`);
+  shard.style.setProperty('--r0',`${(Math.random()-.5)*40}deg`);
+  shard.style.setProperty('--r',`${(Math.random()-.5)*720}deg`);
+  shard.style.setProperty('--s',`${.7+Math.random()*.8}`);
+  shard.style.setProperty('--dur',`${.9+Math.random()*.55}s`);
+  layer.appendChild(shard);
+ }
+ layer.classList.remove('go');void layer.offsetWidth;layer.classList.add('go');
+ setTimeout(()=>{layer.classList.remove('go');layer.innerHTML=''},1500);
+}
+function applyPage(){
+ const page=location.hash.replace('#','').toLowerCase()||'home';
+ const ids=['home','info','team','events','achievements'];
+ const active=ids.includes(page)?page:'home';
+ const first=!document.body.dataset.firstPageApplied;
+ if(!first)playPageGlass();
+ const switchPage=()=>{ids.forEach(id=>document.getElementById(id)?.classList.toggle('active',id===active));window.scrollTo({top:0,behavior:'auto'});};
+ if(first)switchPage();else setTimeout(switchPage,260);
+ const travel=document.getElementById('pageTravel');
+ if(travel&&!first){travel.classList.remove('go');void travel.offsetWidth;travel.classList.add('go');setTimeout(()=>travel.classList.remove('go'),1000)}
+ document.body.dataset.firstPageApplied='1';
 }
 
 renderAll();
 loadConfig();
 updateStats();
-updateLiveTeam();
 setInterval(updateStats,10000);
-setInterval(updateLiveTeam,10000);
+window.addEventListener('hashchange',applyPage);
+applyPage();
 
-const cursor=document.getElementById('cursor');
-document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+const cursor=document.getElementById('cursor'),cursorGlow=document.getElementById('cursorGlow'),cursorTrail=document.getElementById('cursorTrail');
+let trailX=0,trailY=0,targetX=window.innerWidth/2,targetY=window.innerHeight/2;
+document.addEventListener('mousemove',e=>{targetX=e.clientX;targetY=e.clientY;cursor.style.left=targetX+'px';cursor.style.top=targetY+'px';cursorGlow.style.left=targetX+'px';cursorGlow.style.top=targetY+'px'});
+function animateCursorTrail(){trailX+=(targetX-trailX)*.16;trailY+=(targetY-trailY)*.16;cursorTrail.style.left=trailX+'px';cursorTrail.style.top=trailY+'px';requestAnimationFrame(animateCursorTrail)}
+animateCursorTrail();
 document.querySelectorAll('a,button,.glass').forEach(el=>{
- el.addEventListener('mouseenter',()=>{cursor.style.width='28px';cursor.style.height='28px';cursor.style.background='rgba(167,139,250,.08)'});
- el.addEventListener('mouseleave',()=>{cursor.style.width='18px';cursor.style.height='18px';cursor.style.background='transparent'});
+ el.addEventListener('mouseenter',()=>{cursor.style.width='28px';cursor.style.height='28px';cursor.style.background='rgba(212,175,55,.08)';cursorGlow.style.width='330px';cursorGlow.style.height='330px'});
+ el.addEventListener('mouseleave',()=>{cursor.style.width='18px';cursor.style.height='18px';cursor.style.background='transparent';cursorGlow.style.width='260px';cursorGlow.style.height='260px'});
+});
+document.querySelectorAll('.glass').forEach(card=>{
+ card.addEventListener('mousemove',e=>{if(matchMedia('(max-width:760px)').matches)return;const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.setProperty('--ry',`${x*10}deg`);card.style.setProperty('--rx',`${-y*10}deg`)});
+ card.addEventListener('mouseleave',()=>{card.style.setProperty('--ry','0deg');card.style.setProperty('--rx','0deg')});
+});
+let glassCrackAudioContext=null;
+function playGlassCrackSound(){try{glassCrackAudioContext ||= new (window.AudioContext||window.webkitAudioContext)();const ctx=glassCrackAudioContext;if(ctx.state==='suspended')ctx.resume();const now=ctx.currentTime;const master=ctx.createGain();master.gain.setValueAtTime(.0001,now);master.gain.exponentialRampToValueAtTime(.22,now+.006);master.gain.exponentialRampToValueAtTime(.0001,now+.34);master.connect(ctx.destination);const osc=ctx.createOscillator();osc.type='triangle';osc.frequency.setValueAtTime(1700,now);osc.frequency.exponentialRampToValueAtTime(320,now+.28);osc.connect(master);osc.start(now);osc.stop(now+.3);const buffer=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.22),ctx.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/data.length,1.8);const noise=ctx.createBufferSource();noise.buffer=buffer;const filter=ctx.createBiquadFilter();filter.type='highpass';filter.frequency.value=900;const noiseGain=ctx.createGain();noiseGain.gain.setValueAtTime(.0001,now);noiseGain.gain.exponentialRampToValueAtTime(.32,now+.004);noiseGain.gain.exponentialRampToValueAtTime(.0001,now+.22);noise.connect(filter);filter.connect(noiseGain);noiseGain.connect(ctx.destination);noise.start(now);noise.stop(now+.22)}catch(error){console.warn('Glass crack sound unavailable',error)}}
+let tapCount=0,tapTimer=null;
+document.addEventListener('pointerdown',e=>{
+ tapCount++;
+ clearTimeout(tapTimer);
+ tapTimer=setTimeout(()=>{tapCount=0},700);
+ if(tapCount===3){
+  tapCount=0;
+  playGlassCrackSound();
+  const wrap=document.createElement('div');wrap.className='tap-glass';wrap.style.left=e.clientX+'px';wrap.style.top=e.clientY+'px';
+  const core=document.createElement('span');core.className='crack-core';wrap.appendChild(core);
+  const ring=document.createElement('span');ring.className='crack-ring';wrap.appendChild(ring);
+  for(let i=0;i<14;i++){const line=document.createElement('span');line.className='crack-line';const a=(360/14)*i+(Math.random()*14-7);line.style.transform=`rotate(${a}deg)`;line.style.setProperty('--len',`${90+Math.random()*170}px`);wrap.appendChild(line)}
+  document.body.appendChild(wrap);
+  for(let i=0;i<9;i++){const s=document.createElement('span');s.className='tap-shard';s.style.left=`${e.clientX+(Math.random()-.5)*90}px`;s.style.top=`${e.clientY+(Math.random()-.5)*90}px`;s.style.setProperty('--w',`${18+Math.random()*42}px`);s.style.setProperty('--h',`${12+Math.random()*36}px`);s.style.setProperty('--dx',`${(Math.random()-.5)*260}px`);s.style.setProperty('--dy',`${-80-Math.random()*180}px`);s.style.setProperty('--rot',`${(Math.random()-.5)*420}deg`);document.body.appendChild(s);setTimeout(()=>s.remove(),950)}
+  setTimeout(()=>wrap.remove(),750);
+ }
 });
 </script>
 </body>
