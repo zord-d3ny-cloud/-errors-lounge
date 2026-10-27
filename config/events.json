@@ -1,4 +1,12 @@
 [
- {"title":"ERRORS COMMUNITY NIGHT","description":"A relaxed gaming night for the whole lounge.","date":"2026-11-07","time":"20:00","status":"UPCOMING","game":"Community","banner":"","invite":"https://discord.gg/A3Cdp5RzM"},
- {"title":"FIVE M SESSION","description":"Pull up, squad up and create some chaos.","date":"2026-11-14","time":"21:00","status":"UPCOMING","game":"FiveM","banner":"","invite":"https://discord.gg/A3Cdp5RzM"}
+  {
+    "title": "ERRORS COMMUNITY NIGHT",
+    "description": "A relaxed gaming night for the whole lounge.",
+    "date": "soon",
+    "time": "soon",
+    "status": "UPCOMING",
+    "game": "Community",
+    "banner": "",
+    "invite": "https://discord.gg/A3Cdp5RzM"
+  }
 ]
