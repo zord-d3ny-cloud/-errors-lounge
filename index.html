@@ -166,31 +166,31 @@ setTimeout(()=>bookIntro.classList.add('opened'),4000);
 
 const DISCORD_GUILD_ID='1462764372219920511';
 const DISCORD_INVITE='A3Cdp5RzM';
+let lastMemberCount=null,lastOnlineCount=null;
 async function updateStats(){
-  const members=document.getElementById('members');
-  const online=document.getElementById('online');
-  try{
-    const res=await fetch(`https://discord.com/api/v10/invites/${DISCORD_INVITE}?with_counts=true&with_expiration=true&t=${Date.now()}`,{cache:'no-store'});
-    if(!res.ok) throw new Error('Discord invite stats unavailable');
-    const data=await res.json();
-    const guild=data.guild||{};
-    if(typeof guild.approximate_member_count!=='number') throw new Error('Member count unavailable');
-    members.textContent=guild.approximate_member_count.toLocaleString();
-    online.textContent=(guild.approximate_presence_count??0).toLocaleString();
-  }catch(error){
-    try{
-      const res=await fetch(`https://discord.com/api/guilds/${DISCORD_GUILD_ID}/widget.json?t=${Date.now()}`,{cache:'no-store'});
-      if(!res.ok) throw new Error('Discord widget unavailable');
-      const data=await res.json();
-      if(typeof data.approximate_member_count!=='number') throw new Error('Member count unavailable');
-      members.textContent=data.approximate_member_count.toLocaleString();
-      online.textContent=(data.presence_count??data.approximate_presence_count??0).toLocaleString();
-    }catch(fallbackError){
-      members.textContent='—';
-      online.textContent='—';
-    }
-  }
+ const members=document.getElementById('members');
+ const online=document.getElementById('online');
+ const show=(m,o)=>{lastMemberCount=m;lastOnlineCount=o;members.textContent=Number(m).toLocaleString();online.textContent=Number(o||0).toLocaleString()};
+ try{
+  const res=await fetch(`https://discord.com/api/v10/invites/${DISCORD_INVITE}?with_counts=true&t=${Date.now()}`,{cache:'no-store',headers:{Accept:'application/json'}});
+  if(!res.ok)throw new Error(`Invite stats ${res.status}`);
+  const data=await res.json();const guild=data.guild||{};
+  if(typeof guild.approximate_member_count!=='number')throw new Error('Member count unavailable');
+  show(guild.approximate_member_count,typeof guild.approximate_presence_count==='number'?guild.approximate_presence_count:0);
+  return;
+ }catch(error){console.warn('[DISCORD] Invite stats failed:',error.message)}
+ try{
+  const res=await fetch(`https://discord.com/api/guilds/${DISCORD_GUILD_ID}/widget.json?t=${Date.now()}`,{cache:'no-store',headers:{Accept:'application/json'}});
+  if(!res.ok)throw new Error(`Widget ${res.status}`);
+  const data=await res.json();
+  if(typeof data.approximate_member_count!=='number')throw new Error('Widget member count unavailable');
+  show(data.approximate_member_count,typeof data.approximate_presence_count==='number'?data.approximate_presence_count:(data.presence_count??0));
+  return;
+ }catch(error){console.warn('[DISCORD] Widget stats failed:',error.message)}
+ if(lastMemberCount!==null)members.textContent=lastMemberCount.toLocaleString();
+ if(lastOnlineCount!==null)online.textContent=lastOnlineCount.toLocaleString();
 }
+
 
 async function loadConfig(){
   try{
@@ -251,6 +251,17 @@ function playPageGlass(){
  }
  layer.classList.remove('go');void layer.offsetWidth;layer.classList.add('go');
  setTimeout(()=>{layer.classList.remove('go');layer.innerHTML=''},1500);
+}
+let pageShatterAudioContext=null;
+function playPageShatterSound(){
+ try{
+  pageShatterAudioContext ||= new (window.AudioContext||window.webkitAudioContext)();
+  const ctx=pageShatterAudioContext;if(ctx.state==='suspended')ctx.resume();const now=ctx.currentTime;
+  const master=ctx.createGain();master.gain.setValueAtTime(.0001,now);master.gain.exponentialRampToValueAtTime(.2,now+.008);master.gain.exponentialRampToValueAtTime(.0001,now+.65);master.connect(ctx.destination);
+  const buffer=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.5),ctx.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/data.length,1.3);
+  const noise=ctx.createBufferSource();noise.buffer=buffer;const filter=ctx.createBiquadFilter();filter.type='bandpass';filter.frequency.setValueAtTime(2800,now);filter.frequency.exponentialRampToValueAtTime(520,now+.5);filter.Q.value=.72;noise.connect(filter);filter.connect(master);noise.start(now);noise.stop(now+.5);
+  for(let i=0;i<6;i++){const osc=ctx.createOscillator(),gain=ctx.createGain(),start=now+i*.016;osc.type=i%2?'triangle':'sine';osc.frequency.setValueAtTime(2100-i*210,start);osc.frequency.exponentialRampToValueAtTime(360+i*55,start+.36);gain.gain.setValueAtTime(.0001,start);gain.gain.exponentialRampToValueAtTime(.06,start+.006);gain.gain.exponentialRampToValueAtTime(.0001,start+.4);osc.connect(gain);gain.connect(ctx.destination);osc.start(start);osc.stop(start+.42)}
+ }catch(error){console.warn('Page shatter sound unavailable',error)}
 }
 function applyPage(){
  const page=location.hash.replace('#','').toLowerCase()||'home';
